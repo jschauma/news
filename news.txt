@@ -1,0 +1,40 @@
+NEWS(1)			NetBSD General Commands Manual		       NEWS(1)
+
+NAME
+     news -- print news items
+
+SYNOPSIS
+     news [-ans] [items]
+
+DESCRIPTION
+     The news utility prints news items stored in /var/news.  When invoked
+     without any arguments, news prints the name and timestamp of each current
+     item followed by its contents, most recent first.	An item is considered
+     ``current'' if it has a modification time newer than the file
+     ~/.news_time, a file that news creates if it does not exist.  If that
+     file does exist, news will update the timestamp on that file each time it
+     is run.
+
+     Any items passed to news are interpreted as filenames (either relative to
+     /var/news or absolute) to display.
+
+     The following options are available:
+
+     -a		 All available items are displayed, regardless of their ``cur-
+		 rency''.
+
+     -n		 Only the names and modification times of the current items
+		 are displayed.	 Overrides -s.
+
+     -s		 Report only how many news items are current.  Overrides -n.
+		 The timestamp of ~/.news_time is not updated if -s is speci-
+		 fied.
+
+AUTHORS
+     The news utility was written by Jan Schaumann <jschauma@NetBSD.org> fol-
+     lowing the manual page from an IRIX system.
+
+ENVIRONMENT
+     The news utility uses the HOME environment variable.
+
+NetBSD 5.0		       September 2, 2004		    NetBSD 5.0
